@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.libing.dao.UserDao">
+
+    <sql id="columns">
+        id,
+        name,
+        age,
+        create_time,
+        enable
+    </sql>
+
+    <select id="selectOneById" resultType="com.libing.entity.User">
+        select
+        <include refid="columns"/>
+        from user where id=#{id}
+    </select>
+
+</mapper>
